@@ -1,0 +1,14 @@
+{
+  "name": "word-seq",
+  "version": "1.0.0",
+  "description": "New Relic Browser Agent Team Code Challenge",
+  "main": "word-seq.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Marri Gamard",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
