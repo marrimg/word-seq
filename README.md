@@ -23,7 +23,7 @@ From the root directory of the project, run `./word-seq.js path/to/your-file.txt
 From the root directory of the project, run `[your input here] | ./word-seq.js.` For example, you can run `cat path/to/your-file.txt | ./word-seq.js` or `cat <<< "This is some text" | ./word-seq.js`
 
 # Testing
-Run `npm install` or `yarn install` to install the Jest dependency. To run the tests, run `npm run test` or `yarn run test`.
+Run `npm install` to install the Jest dependency. To run the tests, run `npm run test`.
 
 ## Extra Credit
 Unicode characters are included. For example, `cat <<< "Sie aßen süßen Kuchen"` returns:
