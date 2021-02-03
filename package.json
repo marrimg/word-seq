@@ -4,7 +4,7 @@
   "description": "New Relic Browser Agent Team Code Challenge",
   "main": "word-seq.js",
   "scripts": {
-    "test": "npm test"
+    "test": "jest"
   },
   "author": "Marri Gamard",
   "license": "ISC",

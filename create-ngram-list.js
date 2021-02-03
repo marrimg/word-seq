@@ -2,32 +2,35 @@ const createNGramList = function(text){
   var unit = 3;
   var allNGrams = {};
   if(!text.length) return allNGrams;
-  text = text.toLowerCase();
 
-  let wordList = text.replace(/[^0-9A-Za-z'’]+/g, ' ').replace(/[\r\n]/, ' ').split(' ');
-  wordList = wordList.slice(0, wordList.length - 1);
-  for(var wordCounter = 0; wordCounter < wordList.length - (unit - 1); wordCounter++){
-      var sequence = '';
-
+  let wordList = text.toLowerCase().replace(/[^0-9A-Za-z'’.!]+/g, ' ').replace(/[.!]+/g, '').replace(/[\r\n]/g, ' ').split(' ');
+  for(var wordCounter = 0; wordCounter <= (wordList.length - unit); wordCounter++){
+      const sequence = [];
       for(var seqLength = 0; seqLength < unit; seqLength++){
-        if(seqLength === unit - 1) {
-          sequence += wordList[wordCounter + seqLength];
-        } else {
-          sequence += wordList[wordCounter + seqLength] + ' ';
-        }
+        sequence.push(wordList[wordCounter + seqLength]);
       }
-      if( !(sequence in allNGrams) ){
-        allNGrams[sequence] = 1;
+      const stringSeq = sequence.join(' ');
+      if( !(stringSeq in allNGrams) ){
+        allNGrams[stringSeq] = 1;
       } else {
-        allNGrams[sequence] += 1;
+        allNGrams[stringSeq] += 1;
       }
   }
-  sortedNGrams = {};
-  const sortNGrams = Object.entries(allNGrams).sort((a, b) => b[1] - a[1]);
-  const topHundredNGrams = sortNGrams.slice(0, 100).map(item => item.join(' - ')).join("\n");
-  return topHundredNGrams;
+  return allNGrams;
+}
+
+const formatNGramList = (nGrams) => Object.entries(nGrams).sort((a, b) => b[1] - a[1]).slice(0, 100);
+
+const convertListToString = (nGrams) => nGrams.map(item => item.join(' - ')).join("\n");
+
+const outputNGramList = (text) => {
+  const ngrams = createNGramList(text)
+  const sortedNGrams = formatNGramList(ngrams);
+  return convertListToString(sortedNGrams);
 }
 
 module.exports = {
   createNGramList: createNGramList,
+  formatNGramList: formatNGramList,
+  outputNGramList: outputNGramList
 }

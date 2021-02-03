@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const fs = require('fs');
-const { createNGramList } = require('./create-ngram-list');
+const { outputNGramList } = require('./create-ngram-list');
 
 const arguments = process.argv.slice(2);
 let text = '';
@@ -14,5 +14,5 @@ arguments.forEach(item => {
   }
 });
 
-const nGrams = createNGramList(text);
+const nGrams = outputNGramList(text);
 console.log(nGrams);
