@@ -3,7 +3,7 @@ const createNGramList = function(text){
   var allNGrams = {};
   if(!text.length) return allNGrams;
 
-  let wordList = text.toLowerCase().replace(/[^0-9A-Za-z'’.!]+/g, ' ').replace(/[.!]+/g, '').replace(/[\r\n]/g, ' ').split(' ');
+  let wordList = text.toLowerCase().replace(/[^0-9A-Za-z'’.!]+|\r\n+/g, ' ').replace(/[.!]+/g, '').split(' ');
   for(var wordCounter = 0; wordCounter <= (wordList.length - unit); wordCounter++){
       const sequence = [];
       for(var seqLength = 0; seqLength < unit; seqLength++){
