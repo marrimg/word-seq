@@ -3,13 +3,11 @@ Outputs a list of the 100 most common three word sequences in the provided text,
 
 For example, the string "This is a test string a test string" returns:
 
----
-> a test string - 2
-> this is a - 1
-> is a test - 1
-> test string a - 1
+> a test string - 2\
+> this is a - 1\
+> is a test - 1\
+> test string a - 1\
 > string a test - 1
----
 
 # Dependencies
 Uses Jest for testing.
@@ -33,7 +31,7 @@ Run `npm install` to install the Jest dependency. To run the tests, run `npm run
 
 # Extra Credit
 Unicode characters are included. For example, `cat <<< "Sie aßen süßen Kuchen"` returns:
----
-> sie aßen süßen - 1
+
+> sie aßen süßen - 1\
 > aßen süßen kuchen - 1
----
+
