@@ -1,4 +1,4 @@
-# Browser Agent Code Challenge
+# Word-Seq
 Outputs a list of the 100 most common three word sequences in the provided text, sorted from most to least common.
 
 For example, the string "This is a test string a test string" returns:
