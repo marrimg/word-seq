@@ -25,7 +25,12 @@ From the root directory of the project, run `[your input here] | ./word-seq.js.`
 # Testing
 Run `npm install` to install the Jest dependency. To run the tests, run `npm run test`.
 
-## Extra Credit
+# What would I do next, given more time?
+- Use streams instead of `readFileSync`
+- Try processing the sequences in chunks instead of all at once
+- Implement more thorough error handling
+
+# Extra Credit
 Unicode characters are included. For example, `cat <<< "Sie aßen süßen Kuchen"` returns:
 ---
 sie aßen süßen - 1

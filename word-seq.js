@@ -11,14 +11,19 @@ if(arguments.length > 0) {
       const data = fs.readFileSync(`${item}`, 'utf8');
       text += data;
     } catch (err) {
-      console.error(err)
+      console.error(err);
     }
   });
   const nGrams = outputNGramList(text);
   console.log(nGrams);
 } else {
-  var data = fs.readFileSync(0, 'utf-8');
-  const nGrams = outputNGramList(data);
-  console.log(nGrams);
+  try {
+    const data = fs.readFileSync(0, 'utf-8');
+    const nGrams = outputNGramList(data);
+    console.log(nGrams);
+  } catch(err) {
+    console.error(err);
+  }
+
 }
 
