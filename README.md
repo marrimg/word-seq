@@ -15,10 +15,13 @@ string a test - 1
 
 # Dependencies
 Uses Jest for testing.
+
 # How to Run
 You can pass one or more text files to the program as arguments, or pass text to stdin.
+
 ### Running With Arguments
 From the root directory of the project, run `./word-seq.js path/to/your-file.txt`. This can accept multiple files.
+
 ### Running With Stdin input
 From the root directory of the project, run `[your input here] | ./word-seq.js.` For example, you can run `cat path/to/your-file.txt | ./word-seq.js` or `cat <<< "This is some text" | ./word-seq.js`
 
